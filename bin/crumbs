@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+'use strict';
+
+var crumbs = require('../lib/crumbs');
+
+function isValid(command) {
+	return command === 'init';
+}
+
+function outputHelp() {
+	console.log('Please use "crumbs init"')
+}
+
+function initialize() {
+	crumbs.initialize();
+	process.exit(0);
+}
+
+function exitWithError() {
+	outputHelp();
+	process.exit(1);
+}
+
+// if(isValid(process.argv[2])) {
+//  initialize();
+// } else {
+//  exitWithError();
+// }
+
+initialize();
